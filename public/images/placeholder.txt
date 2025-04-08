@@ -1,0 +1,34 @@
+# Placeholder for Images
+
+The following images need to be added to this directory:
+
+1. `logo.png` - The CapitalBulls  logo image (approximately 200px wide)
+2. `favicon.ico` - Site icon for browser tabs (32x32px or 64x64px)
+3. `hero-bg.jpg` - Background image for the hero section (dark, high-contrast, at least 1920x1080px)
+4. `broker-phones.jpg` - Image showing the "your broker blocked us" message on mobile phones (from Instagram)
+5. `gallery1.jpg` through `gallery6.jpg` - Images for the Instagram gallery with the following content:
+   - `gallery1.jpg` & `gallery4.jpg` - Trading results/chart screenshots (category: results)
+   - `gallery2.jpg` & `gallery5.jpg` - Educational content/quotes (category: education)
+   - `gallery3.jpg` & `gallery6.jpg` - Motivational content (category: motivation)
+
+You can source these directly from the CapitalBulls  Instagram account. The style should match their Instagram aesthetic:
+- Dark backgrounds
+- Bold, high-contrast text
+- Modern typography
+- Vibrant gold/green highlights on dark backgrounds
+
+Important image dimensions:
+- Logo: Around 200px wide
+- Hero background: At least 1920x1080px (high resolution)
+- Gallery images: Square format, at least 500x500px (Instagram style)
+- Broker phones image: At least 600px wide
+- Favicon: 32x32px or 64x64px
+
+Image suggestions from Instagram:
+- "Profits wait for no one. Neither do we." (hero background)
+- "Your broker blocked us" phones image
+- "R1250 feels expensive? bro, how broke are you?"
+- "Stop treating the market like your ex. It's not personal."
+- "We are the only trading community in South Africa to trade LIVE everyday"
+
+Please ensure all images are properly licensed or you have permission to use them from CapitalBulls . 

@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CapitalBulls Client Access Hub
+
+A modern web application designed to streamline the client experience and centralize access to CapitalBulls' exclusive offerings—all in one browser-based hub.
+
+## Features
+
+- **User Authentication**: Secure login and registration with membership tiers
+- **Live Stream Access**: View embedded live streams directly in the web app
+- **Browser Notifications**: Get alerts when streams go live or new content is available
+- **Exclusive Content**: Access premium content exclusive to web app members
+- **Membership Tiers**: Users assigned to different tiers with varying access levels
+- **Integrated Navigation**: Direct links to Discord, official website, broker connections, and payment portals
+
+## Tech Stack
+
+- **Frontend**: React, Next.js, TailwindCSS
+- **Backend**: Next.js API Routes
+- **Authentication**: NextAuth.js
+- **Database**: MongoDB
+- **Notifications**: Web Push API
+- **Hosting**: Render
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Node.js (v18+)
+- npm or yarn
+- MongoDB database
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/capitalbulls.git
+   cd capitalbulls
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-## Learn More
+3. Create a `.env.local` file in the root directory with the following environment variables:
+   ```
+   # MongoDB
+   MONGODB_URI=your_mongodb_connection_string
+   
+   # NextAuth
+   NEXTAUTH_SECRET=your_nextauth_secret
+   NEXTAUTH_URL=http://localhost:3000
+   
+   # Push Notifications
+   NEXT_PUBLIC_VAPID_PUBLIC_KEY=your_vapid_public_key
+   VAPID_PRIVATE_KEY=your_vapid_private_key
+   CONTACT_EMAIL=your_email@example.com
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+4. Generate VAPID keys for push notifications (you only need to do this once):
+   ```bash
+   npx web-push generate-vapid-keys
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+5. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Project Structure
 
-## Deploy on Vercel
+- `/src/app`: App routes and pages
+- `/src/components`: Reusable components
+- `/src/hooks`: Custom React hooks
+- `/src/lib`: Utility functions
+- `/src/models`: MongoDB schemas
+- `/public`: Static assets
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This application is configured to be deployed on Render. Connect your GitHub repository to Render and set the environment variables.
