@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import DashboardNavigation from '../../components/DashboardNavigation';
@@ -43,23 +43,7 @@ export default function AdminPage() {
   const [accessType, setAccessType] = useState<string>('premium_24h');
   const [startDate, setStartDate] = useState<string>('');
 
-  useEffect(() => {
-    if (status === 'unauthenticated') {
-      router.push('/auth/login');
-      return;
-    }
-
-    if (session && session.user.role !== UserRole.ADMIN) {
-      router.push('/dashboard');
-      return;
-    }
-
-    if (session) {
-      fetchUsers();
-    }
-  }, [status, session, router, pagination.page, search]);
-
-  const fetchUsers = async () => {
+  const fetchUsers = useCallback(async () => {
     try {
       setLoading(true);
       const res = await fetch(
@@ -81,7 +65,23 @@ export default function AdminPage() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [pagination.page, pagination.limit, search]);
+
+  useEffect(() => {
+    if (status === 'unauthenticated') {
+      router.push('/auth/login');
+      return;
+    }
+
+    if (session && session.user.role !== UserRole.ADMIN) {
+      router.push('/dashboard');
+      return;
+    }
+
+    if (session) {
+      fetchUsers();
+    }
+  }, [status, session, router, pagination.page, search, fetchUsers]);
 
   const grantAccess = async () => {
     if (!selectedUser) return;
